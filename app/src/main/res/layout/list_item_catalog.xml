@@ -12,7 +12,15 @@
       android:layout_height="wrap_content"
       android:orientation="horizontal"
       >
-  <TextView
+    <ImageView
+        android:id="@+id/list_item_image_view"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@android:color/darker_gray"
+        android:scaleType="centerInside"
+        android:cropToPadding="true"
+        />
+    <TextView
       android:id="@+id/list_item_catalog_name"
       android:layout_width="wrap_content"
       android:layout_height="?attr/listPreferredItemHeight"
