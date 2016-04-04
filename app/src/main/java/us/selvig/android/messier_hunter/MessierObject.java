@@ -6,41 +6,65 @@ import java.util.UUID;
  * Created by moya on 3/22/16.
  */
 public class MessierObject {
-  private UUID mId;
+  private UUID mUUID;
   private String mName;
   private String mType;
   private String mConstellation;
   private int mNum;
-  private int mNgc;
+  private String mNgc;
   private float mDistance;
   private boolean mObserved;
 
-  public UUID getId() {
-    return mId;
+  public MessierObject() {
+    this(UUID.randomUUID());
   }
 
-  public String getName() {
-    return mName;
+  public MessierObject(UUID uuid) {
+    mUUID= uuid;
   }
 
-  public int getNum() {
-    return mNum;
+  public UUID getUUID() {
+    return mUUID;
   }
 
   public String getConstellation() {
     return mConstellation;
   }
 
+  public void setConstellation(String constellation) {
+    mConstellation = constellation;
+  }
+
   public float getDistance() {
     return mDistance;
   }
 
-  public int getNgc() {
+  public void setDistance(float distance) {
+    mDistance = distance;
+  }
+
+  public String getName() {
+    return mName;
+  }
+
+  public void setName(String name) {
+    mName = name;
+  }
+
+  public String getNgc() {
     return mNgc;
   }
 
-  public String getType() {
-    return mType;
+  public void setNgc(String ngc) {
+    mNgc = ngc;
+  }
+
+  public int getNum() {
+    return mNum;
+  }
+
+  public void setNum(int num) {
+    mNum = num;
   }
 
   public boolean isObserved() {
@@ -51,4 +75,11 @@ public class MessierObject {
     mObserved = observed;
   }
 
+  public String getType() {
+    return mType;
+  }
+
+  public void setType(String type) {
+    mType = type;
+  }
 }
