@@ -18,9 +18,9 @@
         android:id="@+id/list_item_thumbnail_view"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@android:drawable/gallery_thumb"
+        android:background="@android:drawable/picture_frame"
         android:scaleType="fitXY"
-        android:cropToPadding="true"
+        android:adjustViewBounds="true"
         />
 
     <TextView
@@ -45,7 +45,6 @@
           android:layout_height="wrap_content"
           android:layout_marginBottom="4dp"
           android:layout_marginLeft="4dp"
-          android:layout_marginRight="4dp"
           tools:text="type"
           android:textSize="14sp"
           android:textStyle="italic"

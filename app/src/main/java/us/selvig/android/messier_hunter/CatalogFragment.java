@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.bumptech.glide.Glide;
 import java.lang.reflect.Field;
 import java.util.List;
 
@@ -99,18 +100,14 @@ public class CatalogFragment extends Fragment {
       mNGC.setText(mMessierObject.getNgc());
 
       String thumbnailName = mMessierObject.getName().toLowerCase() + "_thumb";
-      //mThumbnail.setImageResource(getThumbnailResId(thumbnailName));
-      loadThumbnail(getThumbnailResId(thumbnailName), mThumbnail);
-    }
-
-    public void loadThumbnail(int resId, ImageView imageView) {
-      imageView.setImageResource(android.R.drawable.gallery_thumb);
-      BitmapWorkerTask task = new BitmapWorkerTask(getContext(), imageView);
-      task.execute(resId);
+      Glide
+          .with(getActivity())
+          .load(getThumbnailResId(thumbnailName))
+          .into(mThumbnail);
     }
 
     private int getThumbnailResId(String name) {
-      int resId = R.color.colorPrimaryDark;
+      int resId = android.R.color.transparent;
 
       try {
         Class res = R.drawable.class;
