@@ -82,4 +82,5 @@ public class MessierObject {
   public void setType(String type) {
     mType = type;
   }
+
 }
