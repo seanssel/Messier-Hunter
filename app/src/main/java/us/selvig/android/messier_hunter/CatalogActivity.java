@@ -18,7 +18,6 @@ public class CatalogActivity extends AppCompatActivity{
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    setTheme(R.style.AppTheme);
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_catalog);
 
@@ -34,8 +33,8 @@ public class CatalogActivity extends AppCompatActivity{
 
   private void initViewPagerAndTabs() {
     PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
-    pagerAdapter.addFragment(CatalogFragment.newInstance(), getString(R.string.catalog_name));
-    pagerAdapter.addFragment(CatalogFragment.newInstance(), getString(R.string.objectives_name));
+    pagerAdapter.addFragment(new CatalogFragment(), getString(R.string.catalog_name));
+    pagerAdapter.addFragment(new CatalogFragment(), getString(R.string.objectives_name));
 
     ViewPager viewPager = (ViewPager) findViewById(R.id.activity_fragment_view_pager);
     viewPager.setAdapter(pagerAdapter);
@@ -44,7 +43,7 @@ public class CatalogActivity extends AppCompatActivity{
     tabLayout.setupWithViewPager(viewPager);
   }
 
-  static class PagerAdapter extends FragmentPagerAdapter {
+  private static class PagerAdapter extends FragmentPagerAdapter {
 
     private final List<Fragment> fragmentList = new ArrayList<>();
     private final List<String> fragmentTitleList = new ArrayList<>();

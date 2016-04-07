@@ -12,6 +12,7 @@
       android:layout_height="wrap_content"
       android:orientation="horizontal"
       >
+
     <ImageView
         android:id="@+id/list_item_image_view"
         android:layout_width="80dp"
@@ -20,25 +21,26 @@
         android:scaleType="centerInside"
         android:cropToPadding="true"
         />
-    <TextView
-      android:id="@+id/list_item_catalog_name"
-      android:layout_width="wrap_content"
-      android:layout_height="?attr/listPreferredItemHeight"
-      android:gravity="center_vertical"
-      android:padding="8dp"
-      tools:text="name"
-      style="@style/Base.TextAppearance.AppCompat.Body2"
-      />
 
-  <TextView
-      android:id="@+id/list_item_catalog_type"
-      android:layout_width="wrap_content"
-      android:layout_height="?attr/listPreferredItemHeight"
-      android:gravity="center_vertical"
-      android:padding="8dp"
-      tools:text="type"
-      style="@style/Base.TextAppearance.AppCompat.Body2"
-      />
+    <TextView
+        android:id="@+id/list_item_catalog_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        tools:text="name"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+        />
+
+    <TextView
+        android:id="@+id/list_item_catalog_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="type"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+        android:textSize="12sp"
+        />
+
   </LinearLayout>
 
 </android.support.v7.widget.CardView>

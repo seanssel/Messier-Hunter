@@ -10,7 +10,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import java.io.File;
 import java.util.List;
 
 /**
@@ -21,6 +23,7 @@ public class CatalogFragment extends Fragment {
   private CatalogAdapter mAdapter;
   private RecyclerView mRecyclerView;
   private List<MessierObject> mCatalog;
+  private File mThumbnail;
 
   public static CatalogFragment newInstance() {
     return new CatalogFragment();
@@ -73,11 +76,13 @@ public class CatalogFragment extends Fragment {
     private MessierObject mMessierObject;
     private TextView mName;
     private TextView mType;
+    private ImageView mThumbnail;
 
     public CatalogHolder(View itemView) {
       super(itemView);
       mName = (TextView) itemView.findViewById(R.id.list_item_catalog_name);
       mType= (TextView) itemView.findViewById(R.id.list_item_catalog_type);
+      mThumbnail = (ImageView) itemView.findViewById(R.id.list_item_image_view);
     }
 
     private void bindMessierObject(MessierObject messierObject) {
